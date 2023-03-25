@@ -16,11 +16,11 @@ exports.submitOne = async (req, res) => {
 
         if (req.body.answer == quiz.key) {
             res.status(200).json({
-                "message": "benar"
+                "message": "Jawaban benar, Selamat!"
             })
         } else {
             res.status(200).json({
-                "message": `Jawaban benar adalah ${quiz.key}`
+                "message": `Jawaban salah, jawaban yang benar adalah ${quiz.key}`
             })
         }
     } catch (e) {
@@ -52,7 +52,7 @@ exports.submitOne = async (req, res) => {
             }
         }
         res.status(200).json({
-            message: `benar ${benar} dari ${totalSoal} soal`
+            message: `Jawaban benar ${benar} dari ${totalSoal} soal`
         })
     } catch (e) {
         res.status(500).json({message: e.message});
